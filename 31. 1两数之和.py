@@ -11,7 +11,7 @@
 #示例 3：
 #输入：nums = [3,3], target = 6
 #输出：[0,1]
-###########################
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dic = {}
@@ -21,4 +21,3 @@ class Solution:
             else:
                 dic[j] = i
         return []
-###########################
