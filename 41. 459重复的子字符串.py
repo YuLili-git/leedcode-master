@@ -10,6 +10,7 @@
 #输入: "abcabcabcabc"
 #输出: True
 #解释: 可由子字符串 "abc" 重复四次构成。 (或者子字符串 "abcabc" 重复两次构成。)
+#################### solution 1 ####################
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:  
         if len(s) == 0:
@@ -30,3 +31,12 @@ class Solution:
                 j += 1
             nxt[i] = j
         return nxt
+#################### solution 2 ####################
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        n = len(s)
+        for i in range(1, n // 2 + 1):
+            if n % i == 0:
+                if all(s[j] == s[j - i] for j in range(i, n)):
+                    return True
+        return False
